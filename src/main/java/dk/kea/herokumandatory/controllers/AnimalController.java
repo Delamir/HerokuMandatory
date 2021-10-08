@@ -46,7 +46,6 @@ public class AnimalController {
     public String patchAnimal(@PathVariable Long id, @RequestBody Animal animal) {
         return animals.findById(id).map(foundAnimal -> {
             if (animal.getAge() !=0) foundAnimal.setAge(animal.getAge());
-            if (animal.getId() != 0) foundAnimal.setId(animal.getId());
             if (animal.getName() != null) foundAnimal.setName(animal.getName());
             if (animal.getType() != null) foundAnimal.setType((animal.getType()));
             animals.save(animal);

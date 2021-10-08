@@ -48,7 +48,7 @@ public class AnimalController {
             if (animal.getAge() !=0) foundAnimal.setAge(animal.getAge());
             if (animal.getName() != null) foundAnimal.setName(animal.getName());
             if (animal.getType() != null) foundAnimal.setType((animal.getType()));
-            animals.save(animal);
+            animals.save(foundAnimal);
             return "Animal updated";
         }).orElse("Animal not found");
     }
